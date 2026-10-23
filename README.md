@@ -13,15 +13,6 @@ A browser extension that helps restore text selection, copy, cut, paste, and rig
 - **Preview and export:** Preview a recording and download it. Recorder capabilities depend on browser support and the permissions you choose in the browser's sharing dialog.
 - **Simple popup:** A compact interface to manage the current site's setting.
 
-## 🖼️ Screenshots
-
-Screenshots can be added here once you capture them from your own build. For example:
-
-```md
-![Thor popup](screenshots/popup.png)
-![Thor recorder](screenshots/recorder.png)
-```
-
 ## 📦 Installation
 
 ### Firefox Add-ons
