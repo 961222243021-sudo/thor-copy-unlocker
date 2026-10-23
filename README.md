@@ -124,5 +124,3 @@ This project is distributed under the MIT License. See [LICENSE](LICENSE).
 ## 👤 Author
 
 Created by **Shyam**.
-
-If you publish a release or official store listing, add its link here.
