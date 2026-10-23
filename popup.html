@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Thor</title>
+<style>
+:root{--gold:#ffc83d;--blue:#4cc3ff;--bg1:#0b1226;--bg2:#1a2550}
+*{box-sizing:border-box}
+body{width:280px;margin:0;padding:18px;font-family:"Segoe UI",system-ui,sans-serif;color:#e8eeff;
+ background:radial-gradient(circle at 50% -10%,var(--bg2),var(--bg1) 70%);}
+.head{display:flex;align-items:center;gap:10px}
+.bolt{width:34px;height:34px;filter:drop-shadow(0 0 8px var(--gold))}
+h1{font-size:17px;margin:0;letter-spacing:2px;color:var(--gold);text-shadow:0 0 10px rgba(255,200,61,.6)}
+.sub{font-size:11px;color:#9fb2e8;margin-top:2px}
+.host{margin:16px 0 12px;padding:8px 10px;border:1px solid #2c3b78;border-radius:8px;font-size:12px;color:var(--blue);word-break:break-all;background:rgba(255,255,255,.03)}
+.row{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px}
+#status{font-size:12px;font-weight:700;letter-spacing:1.5px;color:var(--gold)}
+body.off #status{color:#7d89b3}
+body.off .bolt{filter:grayscale(1) opacity(.5)}
+.switch{position:relative;width:46px;height:26px}
+.switch input{opacity:0;width:0;height:0}
+.slider{position:absolute;inset:0;background:#2a3566;border-radius:26px;cursor:pointer;transition:.2s}
+.slider:before{content:"";position:absolute;width:20px;height:20px;left:3px;top:3px;background:#fff;border-radius:50%;transition:.2s}
+input:checked+.slider{background:linear-gradient(90deg,#e6a800,var(--gold));box-shadow:0 0 12px rgba(255,200,61,.7)}
+input:checked+.slider:before{transform:translateX(20px)}
+.hint{font-size:11px;color:#8fa0d6;line-height:1.45;margin:10px 0 14px}
+button{width:100%;padding:9px;border:1px solid var(--gold);border-radius:8px;background:transparent;color:var(--gold);font-weight:600;cursor:pointer}
+button:hover{background:rgba(255,200,61,.12)}
+.foot{margin-top:14px;text-align:center;font-size:11px;color:#6f80b8;letter-spacing:1px}
+.foot b{color:var(--gold)}
+</style></head>
+<body>
+<div class="head">
+ <svg class="bolt" viewBox="0 0 64 64"><path d="M38 4 14 36h14l-6 24 28-36H36z" fill="#ffc83d" stroke="#fff3c0" stroke-width="2" stroke-linejoin="round"/></svg>
+ <div><h1>THOR</h1><div class="sub">Copy &amp; Paste Unlocker</div></div>
+</div>
+<div class="host" id="host">this site</div>
+<div class="row"><span id="status">POWER: UNLEASHED</span>
+ <label class="switch"><input type="checkbox" id="toggle" checked><span class="slider"></span></label></div>
+<div class="hint">Strikes down copy, cut, paste, right-click and text-selection locks. Toggling applies live; reload if a page still misbehaves.</div>
+<button id="record" style="margin-bottom:8px">🎥 Record screen</button>
+<button id="reload">⚡ Reload this tab</button>
+<div class="foot">⚡ Made by <b>Shyam</b> ⚡</div>
+<script src="popup.js"></script>
+</body></html>

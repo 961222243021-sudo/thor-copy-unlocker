@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><title>Thor Recorder</title>
+<style>
+:root{--gold:#ffc83d;--blue:#4cc3ff;--bg1:#0b1226;--bg2:#1a2550}
+*{box-sizing:border-box}
+body{margin:0;min-height:100vh;padding:28px;font-family:"Segoe UI",system-ui,sans-serif;color:#e8eeff;
+ background:radial-gradient(circle at 50% -10%,var(--bg2),var(--bg1) 70%)}
+.wrap{max-width:860px;margin:0 auto}
+h1{margin:0 0 4px;font-size:22px;letter-spacing:2px;color:var(--gold);text-shadow:0 0 10px rgba(255,200,61,.5)}
+.sub{color:#9fb2e8;font-size:13px;margin-bottom:20px}
+.card{border:1px solid #2c3b78;border-radius:12px;padding:16px;background:rgba(255,255,255,.03);margin-bottom:16px}
+.opts{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:14px;font-size:13px;color:#c9d6ff}
+.opts label{display:flex;align-items:center;gap:6px;cursor:pointer}
+input[type=checkbox]{accent-color:var(--gold)}
+.btns{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+button{padding:9px 16px;border:1px solid var(--gold);border-radius:8px;background:transparent;color:var(--gold);font-weight:600;cursor:pointer;font-size:13px}
+button:hover:not(:disabled){background:rgba(255,200,61,.12)}
+button:disabled{opacity:.35;cursor:not-allowed}
+button.rec{background:#d93025;border-color:#d93025;color:#fff}
+#timer{font-variant-numeric:tabular-nums;color:var(--blue);font-weight:700;margin-left:6px}
+#dot{display:none;width:10px;height:10px;border-radius:50%;background:#ff3b30;animation:b 1s infinite}
+@keyframes b{50%{opacity:.25}}
+video{width:100%;border-radius:10px;background:#000;max-height:60vh}
+#msg{margin-top:10px;font-size:12.5px;color:#8fa0d6;min-height:18px}
+#result{display:none}
+.note{font-size:12px;color:#7f90c8;line-height:1.5;margin-top:10px}
+</style></head>
+<body><div class="wrap">
+<h1>⚡ THOR RECORDER</h1>
+<div class="sub">Record your screen, a window or a tab. Then save the video or copy a frame as an image to paste into GPT.</div>
+
+<div class="card">
+  <div class="opts">
+    <label><input type="checkbox" id="sysAudio"> Include tab/system audio</label>
+    <label><input type="checkbox" id="mic"> Include microphone</label>
+  </div>
+  <div class="btns">
+    <button id="start" class="rec">● Start recording</button>
+    <button id="stop" disabled>■ Stop</button>
+    <span id="dot"></span><span id="timer"></span>
+  </div>
+  <div id="msg"></div>
+  <div class="note">Your browser will ask what to share and shows its own "sharing" indicator while recording. Nothing is uploaded anywhere; the video stays in this tab until you save it.</div>
+</div>
+
+<div class="card" id="result">
+  <video id="player" controls></video>
+  <div class="btns" style="margin-top:12px">
+    <button id="download">⬇ Download video</button>
+    <button id="copyFrame">📋 Copy current frame as image</button>
+    <button id="newRec">↺ Record again</button>
+  </div>
+  <div class="note">Tip: pause the video on the moment you want, then click “Copy current frame”, and paste (Ctrl+V) into ChatGPT or any chat. Browsers can't copy a whole video to the clipboard, so for full video use Download and attach the file where video upload is supported.</div>
+</div>
+</div>
+<script src="recorder.js"></script>
+</body></html>
